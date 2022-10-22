@@ -30,14 +30,13 @@ public class EmployeeController {
 	 }
 	 
 	 @GetMapping("/employees/{id}") 
-//	 public String getEmployee(@PathVariable("id")Long id) 
-	 public String getEmployee(@PathVariable Long id) 
+	 public Employee getEmployee(@PathVariable Long id) 
 	 {
-		 return " displaying list of employee id"+id;
+		 return eService.getSingleEmployee(id);
 	 }
 	 @DeleteMapping("/employes")
-	 public String deleteEmployee(@RequestParam("id")Long id) {
-		 return " delete list of employee for id"+id;
+	 public void deleteEmployee(@RequestParam Long id) {
+		 eService.DeleteEmployee(id);
 	 }
 	 @PostMapping("/employees")
 	 public Employee saveEmployee(@RequestBody Employee employee) {
