@@ -29,7 +29,7 @@ public class EmployeeController {
 		 return eService.getEmployees();
 	 }
 	 
-	 @GetMapping("/employees/{id}")
+	 @GetMapping("/employees/{id}") 
 //	 public String getEmployee(@PathVariable("id")Long id) 
 	 public String getEmployee(@PathVariable Long id) 
 	 {
@@ -40,7 +40,7 @@ public class EmployeeController {
 		 return " delete list of employee for id"+id;
 	 }
 	 @PostMapping("/employees")
-	 public String saveEmployee(@RequestBody Employee employee) {
-		 return "saving employee detail for id"+employee;
+	 public Employee saveEmployee(@RequestBody Employee employee) {
+		 return eService.saveEmployee(employee);
 	 }
 } 

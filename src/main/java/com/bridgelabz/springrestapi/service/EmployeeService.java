@@ -7,5 +7,5 @@ import com.bridgelabz.springrestapi.model.Employee;
 public interface EmployeeService {
 
 	List<Employee> getEmployees();
-
+    Employee saveEmployee(Employee employee);
 }
